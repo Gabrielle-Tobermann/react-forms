@@ -7,9 +7,9 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-const StudentCard = () => ({
-  name, 
-  grade, 
+const StudentCard = ({
+  name,
+  grade,
   teacher,
   handleClick
 }) => (
@@ -19,13 +19,13 @@ const StudentCard = () => ({
     <CardText>Teacher: {teacher}</CardText>
     {handleClick ? <Button onClick={handleClick}>Print Student</Button> : ''}
   </Card>
-  );
+);
 
-  StudentCard.propTypes = {
-    name: PropTypes.string.isRequired, 
-    teacher: PropTypes.string.isRequired,
-    grade: PropTypes.string.isRequired,
-    handleClick: PropTypes.func
+StudentCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  teacher: PropTypes.string.isRequired,
+  grade: PropTypes.number.isRequired,
+  handleClick: PropTypes.func
 };
 
 export default StudentCard;

@@ -4,7 +4,7 @@ import firebaseConfig from '../apiKeys';
 const dbURL = firebaseConfig.databaseURL;
 
 const getStudents = () => new Promise((resolve, reject) => {
-  axios.get(`${dbURL}/students.jon`)
+  axios.get(`${dbURL}/students.json`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
