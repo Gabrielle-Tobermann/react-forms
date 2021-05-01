@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import './App.scss';
+import React from 'react';
+import PropTypes from 'prop-types';
+import '../App/App.scss';
 import StudentForm from '../StudentForm';
-import { getStudents } from '../helpers/data/studetnData';
 import StudentCard from '../Components/StudentCard';
 
-function App() {
-  const [students, setStudents] = useState([]);
-
-  useEffect(() => {
-    getStudents().then((response) => setStudents(response));
-  }, []);
-
+function Students({ students, setStudents }) {
   return (
+    <>
     <div className='App'>
       <StudentForm
       formTitle= 'Form Name'
@@ -29,7 +24,13 @@ function App() {
        />
       ))}
     </div>
+    </>
   );
 }
 
-export default App;
+Students.propTypes = {
+  students: PropTypes.array.isRequired,
+  setStudents: PropTypes.func.isRequired
+};
+
+export default Students;
