@@ -42,8 +42,8 @@ const StudentCard = ({
     <CardText>Grade: {grade}</CardText>
     <CardText>Teacher: {teacher}</CardText>
     <Button color="danger" onClick={() => handleClick('delete')}>Delete Student</Button>
-    <Button color="danger" onClick={() => handleClick('view')}>View Student</Button>
-    <Button onClick={() => handleClick('edit')}>{editing ? 'Close Form' : 'Edit Student'}</Button>
+    <Button color="warning" onClick={() => handleClick('view')}>View Student</Button>
+    <Button color="success" onClick={() => handleClick('edit')}>{editing ? 'Close Form' : 'Edit Student'}</Button>
     {
       editing && <StudentForm
       formTitle='Edit Student'

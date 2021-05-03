@@ -17,8 +17,9 @@ export default function Routes({ students, setStudents }) {
            <Route
            path='/students/:firebaseKey'
           component={SingleStudent}
-         />
-        <Route path='/Add-student' component={() => <AddStudent setStudents={setStudents} />}
+        />
+        <Route exact path='/add-student' component={() => <AddStudent
+        setStudents={setStudents}/>}
         />
         <Route path='*' component={NotFound} />
       </Switch>
