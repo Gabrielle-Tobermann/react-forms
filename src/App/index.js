@@ -39,6 +39,7 @@ function App() {
     <Routes
     students={students}
     setStudents={setStudents}
+    user={user}
     />
     </Router>
     </>
